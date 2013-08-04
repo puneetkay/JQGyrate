@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JQGyrate</title>
+		<!-- add jQuery -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<!-- add JQGyrate plugin -->
+		<script type="text/javascript" src="script/gyrate.js"></script>
+		<script type="text/javascript">
+			$(function(){
+
+				$('h1').gyrate();
+
+			});
+		</script>
+		<style type="text/css">
+			* {
+				margin:0;
+				padding: 0;
+			}
+			main {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			JQGyrate Demo page
+		</header>
+		<main>
+			<article>
+				<h1>Welcome to JQGyrate Demo page</h1>
+				<p>Simply a jQuery gyrator plugin!</p>
+			</article>
+		</main>
+		<footer>
+			JQGyrate by <a href="http://www.puneetk.com">Puneet Kalra</a>
+		</footer>
+	</body>
+</html>
