@@ -16,19 +16,31 @@
 			gyrator(e,o);
 		}
 
+		
+		var index = -1;
+		var elem;
 		function gyrator(e,o){
-			
+			index++;
+			if(index == o.items.length){index=0;}
 
-			// Recursive calling.
-			setTimeout(function(){
-				//gyrator(e,o); // Currently disabled for development.
-			},o.speed);
+			elem.animate({opacity:0.0},function(){
+				elem.html(o.items[index]);
+				elem.animate({opacity:1},function(){ 
+
+					// Recursive calling.
+					setTimeout(function(){
+						gyrator(e,o); // Currently disabled for development.
+					},o.speed);
+		
+		 		});
+			});
+
 		}
 
 
 		// Default values
 		var defaults = {
-			speed: 10000, // Speed of gyrator
+			speed: 1000, // Speed of gyrator
 			items: {}, // Items for gyrator
 			dance: 'circle', // Dance type, circle, shuffle etc.
 			style: 'fade', // Effects for gyrate, fade, rotateX, rotateY etc.
@@ -41,7 +53,7 @@
 
 		// Data object ready, Now head for logic
 		return this.each(function(){
-			var elem = $(this);
+			elem = $(this);
 			if(elem == null)
 				return false;
 
